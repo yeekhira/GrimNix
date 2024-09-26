@@ -18,5 +18,14 @@ public class FlightA extends Check implements PacketCheck {
         if (WrapperPlayClientPlayerFlying.isFlying(event.getPacketType()) && !player.isFlying) {
             flag();
         }
+
+        if (player.isFlying) {
+            double speed = player.getSpeed();
+    
+
+            if (speed > 26.0) {
+                flag();
+            }
+        }
     }
 }
